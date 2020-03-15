@@ -8,7 +8,7 @@ using Zenject;
 
 namespace UI {
 	public class MainMenu : MonoBehaviour, IMainMenu {
-		public event Action<string> PlanetSelected;
+		public event Action<string> OnPlanetSelected;
 
 		[SerializeField] private Button backToGameButton;
 		[SerializeField] private Text ballHitsCountText;
@@ -33,7 +33,7 @@ namespace UI {
 
 			foreach (PlanetSettings planetSettings in mainSettings.PlanetsSettings){
 				Button newPlanetButton = InitNewPlanetButton(planetSettings);
-				newPlanetButton.onClick.AddListener(delegate(){ PlanetSelected?.Invoke(planetSettings.PlanetName); });
+				newPlanetButton.onClick.AddListener(delegate(){ OnPlanetSelected?.Invoke(planetSettings.PlanetName); });
 				planetsButtons.Add(newPlanetButton);
 			}
 		}

@@ -1,14 +1,13 @@
-using Entities.Ball;
 using Entities.Interfaces;
 using UnityEngine;
 using Zenject;
 
-namespace Misc.BallMovementInputAdapter {
+namespace Misc.InputAdapter {
 	/// <summary>
 	/// Преобразует экранную позицию курсора в смещение позиции курсора от позиции IPhysicBody в проекции на экранную ось X, нормализованное по ширине экрана.
 	/// </summary>
 	public class ByScreenXShift_InputAdapter : IInputAdapter<Vector2, float> {
-		private IPhysicBody physicBody;
+		private readonly IPhysicBody physicBody;
 		private readonly Camera camera;
 
 		[Inject]

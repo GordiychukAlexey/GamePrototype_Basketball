@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace Entities.Ball {
 	public class BallMovementController : IBallMovementController {
-		private readonly BallView ballView;
+		private readonly IBallView ballView;
 		private readonly BallSettings ballSettings;
 
-		public BallMovementController(BallView ballView, BallSettings ballSettings){
+		public BallMovementController(IBallView ballView, BallSettings ballSettings){
 			this.ballView     = ballView;
 			this.ballSettings = ballSettings;
 		}

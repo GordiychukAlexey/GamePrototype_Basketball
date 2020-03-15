@@ -2,7 +2,7 @@ using System;
 
 namespace UI.Interfaces {
 	public interface IMainMenu : IUIPanel {
-		event Action<string> PlanetSelected;
+		event Action<string> OnPlanetSelected;
 
 		void SetBallHitsCount(int count);
 	}
